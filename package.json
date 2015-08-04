@@ -1,10 +1,11 @@
 {
   "name": "moment-format",
-  "version": "1.0.1",
+  "version": "1.1.8",
   "description": "Format time tree with moment.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/test.js"
+    "test": "mocha ./test/test.js",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,10 @@
   },
   "homepage": "https://github.com/chouchou900822/moment-format",
   "dependencies": {
-    "moment": "^2.10.6"
+    "lodash": "^3.10.1",
+    "mocha": "^2.2.5",
+    "moment": "^2.10.6",
+    "should": "^7.0.2"
   },
   "readmeFilename": "README.md"
 }
