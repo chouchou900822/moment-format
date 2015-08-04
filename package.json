@@ -1,0 +1,27 @@
+{
+  "name": "moment-format",
+  "version": "1.0.1",
+  "description": "Format time tree with moment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chouchou900822/moment-format.git"
+  },
+  "keywords": [
+    "time",
+    "format"
+  ],
+  "author": "Edison",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chouchou900822/moment-format/issues"
+  },
+  "homepage": "https://github.com/chouchou900822/moment-format",
+  "dependencies": {
+    "moment": "^2.10.6"
+  },
+  "readmeFilename": "README.md"
+}
