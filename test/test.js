@@ -33,12 +33,12 @@ var limitData = [{
 var second = moment().format('ss');
 var minute = moment().format('mm');
 var hour = moment().format('HH');
-var day = moment().format('DD') - 1;
+var date = moment().format('DD') - 1;
 var year = moment().format('YYYY') - 1;
 var time1 = moment().set({'second': second - 1}).format("YYYY-MM-DD HH:mm:ss");
 var time2 = moment().set({'minute': minute - 2}).format("YYYY-MM-DD HH:mm:ss");
 var time3 = moment().set({'hour': hour - 2}).format("YYYY-MM-DD HH:mm:ss");
-var time4 = moment().set({'date': day, 'minute': minute + 1}).format("YYYY-MM-DD HH:mm:ss");
+var time4 = moment().set({'date': date, 'minute': minute + 1}).format("YYYY-MM-DD HH:mm:ss");
 var time5 = moment().set({'year': year}).format("YYYY-MM-DD HH:mm:ss");
 
 describe("second test", function() {
@@ -59,7 +59,7 @@ describe("hour test", function() {
   });
 });
 
-describe("day test", function() {
+describe("date test", function() {
   it("The result should match 昨天", function() {
     format(time4, limitData, 'zh-cn').should.match(/昨天/);
   });

@@ -3,15 +3,15 @@
 
 [![NPM](https://nodei.co/npm/moment-format.png?mini=true)](https://nodei.co/npm/moment-format/)
 
-Help you to format your time tree.[中文说明](cn.md)
+帮助你方便的构建你的时间轴
 
-## Installation
+## 安装
 
 ```sh
 $ npm install moment-format
 ```
 
-## test
+## 测试
 
 ```sh
 $ sudo npm install -g mocha
@@ -19,21 +19,21 @@ $ sudo npm install -g mocha
 ```
 
 
-## API
+## 使用
 
 ```js
 var format = require('moment-format');
 var result = format(time, limitData, language);
 ```
 
-## params
+## 参数
 
 `time`:
-The time you wanna format,it can be STRING or DATE.
+你将要处理的时间，类型可以是DATE和STRING.
   
 `limitData`:
-Your standard to format the time.
-It shold be json data like:
+自己设定的处理时间的规则.
+标准是一个JSON数据:
 
 ```
   {
@@ -45,11 +45,11 @@ It shold be json data like:
   }
 ```
 
-`above`: above the time distance
+`above`: 大于这个秒数
 
-`limit`: under the time distance
+`limit`: 小于这个秒数
 
-`unit`: time unit you want to get
+`unit`: 单位
 
 <table>
 <thead>
@@ -63,115 +63,117 @@ It shold be json data like:
 <tr>
 <td><code>null</code></td>
 <td><code>null</code></td>
-<td>When it is null, the result will just be your leftString and rightString</td>
+<td>如果为空，将只会显示你的左右字符串</td>
 </tr>
 <tr>
 <td><code>second</code></td>
 <td><code>1...</code></td>
-<td>seconds from now</td>
+<td>距离现在的秒数</td>
 </tr>
 <tr>
 <td><code>minute</code></td>
 <td><code>1...</code></td>
-<td>minutes from now</td>
+<td>距离现在的分钟数</td>
 </tr>
 <tr>
 <td><code>hour</code></td>
 <td><code>1...</code></td>
-<td>hours from now</td>
+<td>距离现在的小时数</td>
 </tr>
 <tr>
 <td><code>date</code></td>
 <td><code>1...</code></td>
-<td>dates from now</td>
+<td>距离现在的天数</td>
 </tr>
 <tr>
 <td><code>week</code></td>
 <td><code>1...</code></td>
-<td>weeks from now</td>
+<td>距离现在的周数</td>
 </tr>
 <tr>
 <td><code>YYYY</code></td>
 <td><code>2014</code></td>
-<td>4 or 2 digit year</td>
+<td>4位数年份</td>
 </tr>
 <tr>
 <td><code>YY</code></td>
 <td><code>14</code></td>
-<td>2 digit year</td>
+<td>后两位数年份</td>
 </tr>
 <tr>
 <td><code>Q</code></td>
 <td><code>1..4</code></td>
-<td>Quarter of year. Sets month to first month in quarter.</td>
+<td>年的四分之一中的月份</td>
 </tr>
 <tr>
 <td><code>M MM</code></td>
 <td><code>1..12</code></td>
-<td>Month number</td>
+<td>月份</td>
 </tr>
 <tr>
 <td><code>MMM MMMM</code></td>
 <td><code>Jan..December</code></td>
-<td>Month name in locale set by <code>moment.locale()</code></td>
+<td>不同语言的月by <code>moment.locale()</code></td>
 </tr>
 <tr>
 <td><code>D DD</code></td>
 <td><code>1..31</code></td>
-<td>Day of month</td>
+<td>日</td>
 </tr>
 <tr>
 <td><code>Do</code></td>
 <td><code>1st..31st</code></td>
-<td>Day of month with ordinal</td>
+<td>每月第几天</td>
 </tr>
 <tr>
 <td><code>DDD DDDD</code></td>
 <td><code>1..365</code></td>
-<td>Day of year</td>
+<td>每年第几天r</td>
 </tr>
 <tr>
 <td><code>X</code></td>
 <td><code>1410715640.579</code></td>
-<td>Unix timestamp</td>
+<td>Unix时间戳</td>
 </tr>
 <tr>
 <td><code>x</code></td>
 <td><code>1410715640579</code></td>
-<td>Unix ms timestamp</td>
+<td>Unix毫秒时间戳</td>
 </tr>
 </tbody>
 </table>
 
-`leftString`: combine the string with result from left
+`leftString`: 合并在结果时间左边的字符串
 
-`rightString`: combine the string with result from right
+`rightString`: 合并在结果时间右边的字符串
 
+`language`:设定你的时间语言.`'zh-cn'`是中文
 
-`language`:
-The time language you wanna get.
+## 模版
 
-## Template
+如果想使用微博或者微信的时间轴模版，可以看下面的例子
 
-If you wanna to use template of `'weibo'` or `'wechat'`, you can see below.
+微博：
 
 ```js
 var format = require('moment-format');
 var yourResult  = format(yourTime, 'weibo');
 ```
-or
+
+微博移动端：
 
 ```js
+var format = require('moment-format');
 var yourResult  = format(yourTime, 'weiboMobile');
 ```
 
-or
+微信：
 
 ```js
 var yourResult  = format(yourTime, 'wechat');
 ```
 
-## Example
+## 例子
 
 ```js
 var format = require('moment-format');
