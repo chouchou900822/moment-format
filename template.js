@@ -91,12 +91,12 @@ var template = {
       above: '3600',
       limit: moment().unix() - moment(midNight).unix(),
       unit: 'hour',
-      leftString: '小时前'
+      rightString: '小时前'
     },
     {
       above: moment().unix() - moment(midNight).unix(),
       unit: 'date',
-      leftString: '天前'
+      rightString: '天前'
     }
   ]
 };
