@@ -100,5 +100,4 @@ var template = {
     }
   ]
 };
-
 module.exports = template;

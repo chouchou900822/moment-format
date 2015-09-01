@@ -58,7 +58,7 @@ function format(time, form, language) {
         }
       }
     });
-    var resultTime = _.compact(result).join('');
+    var resultTime = _.compact(result)[0];
     return resultTime;
   }
 }
