@@ -1,6 +1,6 @@
 {
   "name": "moment-format",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Format time tree with moment.",
   "main": "index.js",
   "scripts": {
