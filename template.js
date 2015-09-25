@@ -1,8 +1,8 @@
 "use strict";
 
 var moment = require('moment');
-var midNight = moment().startOf('day').format('YYYY-MM-DD HH:mm:ss');
-var midYear = moment().startOf('year').format('YYYY-MM-DD HH:mm:ss');
+var midNight = moment().startOf('day').unix();
+var midYear = moment().startOf('year').unix();
 
 var template = {
   weibo: [
@@ -24,17 +24,17 @@ var template = {
     },
     {
       above: '3600',
-      limit: moment().unix() - moment(midNight).unix(),
+      limit: moment().unix() - midNight,
       unit: 'HH:mm',
       leftString: '今天'
     },
     {
-      limit: moment().unix() - moment(midYear).unix(),
-      above: moment().unix() - moment(midNight).unix(),
+      limit: moment().unix() - midYear,
+      above: moment().unix() - midNight,
       unit: 'MMM Do HH:mm'
     },
     {
-      above: moment().unix() - moment(midYear).unix(),
+      above: moment().unix() - midYear,
       unit: 'YYYY-MM-DD HH:mm'
     }
   ],
@@ -57,23 +57,23 @@ var template = {
     },
     {
       above: '3600',
-      limit: moment().unix() - moment(midNight).unix(),
+      limit: moment().unix() - midNight,
       unit: 'HH:mm',
       leftString: '今天'
     },
     {
-      above: moment().unix() - moment(midNight).unix(),
-      limit: moment().unix() - moment(midNight).unix() + 86400,
+      above: moment().unix() - midNight,
+      limit: moment().unix() - midNight + 86400,
       unit: 'HH:mm',
       leftString: '昨天'
     },
     {
-      limit: moment().unix() - moment(midYear).unix(),
-      above: moment().unix() - moment(midNight).unix() + 86400,
+      limit: moment().unix() - midYear,
+      above: moment().unix() - midNight + 86400,
       unit: 'M-D'
     },
     {
-      above: moment().unix() - moment(midYear).unix(),
+      above: moment().unix() - midYear,
       unit: 'YY-MM-DD'
     }
   ],
@@ -89,12 +89,12 @@ var template = {
     },
     {
       above: '3600',
-      limit: moment().unix() - moment(midNight).unix(),
+      limit: moment().unix() - midNight,
       unit: 'hour',
       rightString: '小时前'
     },
     {
-      above: moment().unix() - moment(midNight).unix(),
+      above: moment().unix() - midNight,
       unit: 'date',
       rightString: '天前'
     }
