@@ -1,8 +1,8 @@
 "use strict";
 
 var moment = require('moment');
-var midNight = moment().set({'hour': 0, 'minute': 0, 'second': 0}).format("YYYY-MM-DD HH:mm:ss");
-var midYear = moment().set({'month': 0, 'date': 0, 'hour': 0, 'minute': 0, 'second': 0}).format("YYYY-MM-DD HH:mm:ss");
+var midNight = moment().startOf('day').format('YYYY-MM-DD HH:mm:ss');
+var midYear = moment().startOf('year').format('YYYY-MM-DD HH:mm:ss');
 
 var template = {
   weibo: [
